@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { UserModule } from './Users/User.Module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
+import { TermsAndConditions } from './TermsAndConditions/TS.module';
 
 
 @Module({
@@ -11,7 +12,8 @@ import { ConfigModule } from '@nestjs/config';
       isGlobal : true
     }),
     MongooseModule.forRoot(process.env.MONGO_URI),
-    UserModule
+    UserModule,
+    TermsAndConditions
   ],
 
 })
